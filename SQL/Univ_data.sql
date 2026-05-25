@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS univ;
+USE univ;
+CREATE TABLE stud_data (
+	id INT,
+    age INT,
+    name VARCHAR(30) NOT NULL,
+    Email VARCHAR(40) UNIQUE,
+    Followers INT DEFAULT 0, #if no followers, set 0
+    Following INT DEFAULT 0,
+    CONSTRAINT age_check CHECK (age>=15), #no students can have age<15
+	PRIMARY KEY (id, name) #no two students can have both same id and nae 
+);
+INSERT INTO stud_data (id, name, age, Email, Followers, Following)
+VALUES
+(101, "Manjunath", 19, "manju@gmail.com", 240, 180),
+(102, "Dhoni", 48, "dhoni@gmail.com", 9800, 150),
+(103, "Smith S", 36, "smiths@gmail.com", 3200, 420),
+(104, "Priya K", 22, "priya@gmail.com", 870, 310);
+INSERT INTO stud_data(id,name,age,Email)
+VALUES
+(104, "KL Rahul", 15, "rahulk@hotmail.com"); #Seperate entry as no followers SO default to zero
+SELECT * FROM stud_data;
