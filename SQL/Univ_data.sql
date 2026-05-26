@@ -8,7 +8,7 @@ CREATE TABLE stud_data (
     Followers INT DEFAULT 0, #if no followers, set 0
     Following INT DEFAULT 0,
     CONSTRAINT age_check CHECK (age>=15), #no students can have age<15
-	PRIMARY KEY (id, name) #no two students can have both same id and nae 
+	PRIMARY KEY (id, name) #no two students can have both same id and name
 );
 INSERT INTO stud_data (id, name, age, Email, Followers, Following)
 VALUES
@@ -20,3 +20,13 @@ INSERT INTO stud_data(id,name,age,Email)
 VALUES
 (104, "KL Rahul", 15, "rahulk@hotmail.com"); #Seperate entry as no followers SO default to zero
 SELECT * FROM stud_data;
+
+CREATE TABLE post (
+	id INT,
+    content VARCHAR(100), 
+    user_id INT,
+    PRIMARY KEY (id), #should be both not null and unique
+    FOREIGN KEY (user_id) REFERENCES stud_data(id) #links both tables with user_id and id connnection
+);
+    
+    
