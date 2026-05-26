@@ -51,4 +51,35 @@ SELECT name, email
 FROM stud_data
 WHERE email IN ("manju@gmail.com", "jroot@ecb.com"); #returns entries with specific targets
 
+SELECT name,age  #Clause: LIMIT : restricts results to a specific number 
+FROM stud_data
+WHERE age>=15
+LIMIT 3; 
+
+SELECT name,age  #Clause: ORDER BY : orders asc/desc by a specific column
+FROM stud_data  #Orders in ascending by default 
+WHERE age>=15
+ORDER BY age;
+
+SELECT name,age,followers  #Clause: ORDER BY : orders asc/desc by a specific column
+FROM stud_data
+WHERE age>=15
+ORDER BY followers DESC;
+
+SELECT COUNT(*) AS total_students_age25
+FROM stud_data 
+WHERE age>=25; #gives a col with count of students aged above or 25
+
+SELECT COUNT(followers) AS students_with_followers FROM stud_data; #ignores NULLs
+SELECT COUNT(DISTINCT age) AS unique_ages FROM stud_data; #counts unique ages
+
+
+SELECT MAX(age) AS oldest FROM stud_data;
+SELECT MAX(Followers) AS most_followers FROM stud_data;
+
+-- GROUPING
+SELECT age, count(id) FROM stud_data GROUP BY age; #groups by age and gives count
+
+SELECT age, max(followers) FROM stud_data GROUP BY age #highest followers in each age group
+#We can only write col names , on whose basis table is getting grouped by in the query. 
 
