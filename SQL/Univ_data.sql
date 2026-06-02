@@ -85,3 +85,26 @@ SELECT age, max(followers) FROM stud_data GROUP BY age ;#highest followers in ea
 
 SELECT age, count(*) FROM stud_data WHERE Followers >200 GROUP BY age; #removes entities with followers <200 and then groups by age
 SELECT age, count(*) FROM stud_data GROUP BY age having SUM(Followers)> 200; #groups first and then filters according to the clause. Only aggregate funcs can be used with HAVING 
+
+SET SQL_SAFE_UPDATES = 0; #changing the default safe update to allow edition
+
+#Updating the information in the table
+UPDATE stud_data
+SET followers=30
+WHERE age>40;
+
+DELETE FROM stud_data
+WHERE age = 19; 
+
+ALTER TABLE stud_data #modifying the schema of the table 
+ADD COLUMN City VARCHAR(30) DEFAULT "Atlanta" ; 
+
+ALTER TABLE stud_data
+RENAME TO Univ_data; 
+
+SELECT * FROM Univ_data
+
+#Truncate only removes the entries in the table and the table can still be operated
+#Drop entirely deletes the table and its entries.
+
+
