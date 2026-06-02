@@ -80,6 +80,8 @@ SELECT MAX(Followers) AS most_followers FROM stud_data;
 -- GROUPING
 SELECT age, count(id) FROM stud_data GROUP BY age; #groups by age and gives count
 
-SELECT age, max(followers) FROM stud_data GROUP BY age #highest followers in each age group
+SELECT age, max(followers) FROM stud_data GROUP BY age ;#highest followers in each age group
 #We can only write col names , on whose basis table is getting grouped by in the query. 
 
+SELECT age, count(*) FROM stud_data WHERE Followers >200 GROUP BY age; #removes entities with followers <200 and then groups by age
+SELECT age, count(*) FROM stud_data GROUP BY age having SUM(Followers)> 200; #groups first and then filters according to the clause. Only aggregate funcs can be used with HAVING 
