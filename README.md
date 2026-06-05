@@ -1,7 +1,7 @@
 # AI/ML Journey
-**Manjunath Ande** · CS @ Georgia State University · [GitHub](https://github.com/ManjunathAnde) · [LinkedIn](https://linkedin.com/in/manjunathande)
+**Manjunath Ande** · CS @ Georgia State University  · [LinkedIn](https://linkedin.com/in/manjunathande)
 
-A structured, self-driven path through the ML stack — from data wrangling to deep learning.
+A structured, self-driven path through the ML stack from data wrangling to deep learning.
 
 ---
 
@@ -27,12 +27,10 @@ A structured, self-driven path through the ML stack — from data wrangling to d
 
 ### ✅ Data Cleaning
 - End-to-end pipeline on a real JSON dataset
-- Type normalization, deduplication, basic EDA
+- Type normalisation, deduplication, basic EDA
 
 
 ---
 
 ## Stack
 `Python` · `NumPy` · `Pandas` · `SQL` · `Jupyter` · `AWS`
-
-**Coming:** `Scikit-learn` · `TensorFlow` · `PyTorch`
